@@ -7,7 +7,6 @@ import { PayloadItem, PayloadDto } from '../models/payload-item';
 export class PayloadService {
 
   private serviceUrl = 'https://raw.githubusercontent.com/PerxTech/angular-interview/master/example.json';
-  // private serviceUrl = 'https://jsonplaceholder.typicode.com/users';
 
   constructor(private http: HttpClient) { }
 

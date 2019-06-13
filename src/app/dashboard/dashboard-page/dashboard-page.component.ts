@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatSort } from '@angular/material';
 import { PayloadService } from 'src/app/services/payload.service';
 import { PayloadItem } from 'src/app/models/payload-item';
+import {merge, Observable, of as observableOf} from 'rxjs';
+import {catchError, map, startWith, switchMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -10,31 +12,14 @@ import { PayloadItem } from 'src/app/models/payload-item';
 })
 export class DashboardPageComponent implements OnInit {
 
-  displayedColumns = [];
-
-  columnNames = [{
-    id: 'id',
-    value: 'No.'
-
-  }, {
-    id: 'type',
-    value: 'Name'
-  },
-  {
-    id: 'links',
-    value: 'Links'
-  }];
-
+  displayedColumns = ['id', 'type', 'links'];
   dataSource: PayloadItem[] = [];
 
-  newDataSource: MatTableDataSource<PayloadItem>;
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   constructor(private payloadService: PayloadService) { }
   ngOnInit() {
 
-    this.newDataSource = new MatTableDataSource(this.dataSource);
-
-    this.displayedColumns = this.columnNames.map(x => x.id);
     this.payloadService.getData()
       .subscribe(payloadDto => {
         this.dataSource = payloadDto.data;
@@ -42,6 +27,5 @@ export class DashboardPageComponent implements OnInit {
   }
 
   applyFilter(filterValue: string) {
-    //this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 }
