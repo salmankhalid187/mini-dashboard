@@ -1,3 +1,6 @@
-<p>
-  directive-demo-page works!
-</p>
+<div *ngIf="false else customBlock">
+  Lorem Ipsum.
+</div>
+<ng-template #customBlock>
+  {{customValue}}
+</ng-template>

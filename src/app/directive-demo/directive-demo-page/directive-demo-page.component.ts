@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectiveDemoPageComponent implements OnInit {
 
-  constructor() { }
+  customValue = 'Some custom text value';
 
   ngOnInit() {
   }
