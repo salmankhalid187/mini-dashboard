@@ -1,0 +1,19 @@
+.bg {
+  background: url("/assets/landing_bg.png");
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  	h1 {
+	  	color: white;	  	
+	  	margin-top: 40%;	  
+  	}	  
+  	.centerColumn { 
+  		float: none;
+  		margin: 0 auto;
+	}
+	button {
+		margin-top:2em; 
+	}
+}
