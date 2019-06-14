@@ -2,6 +2,29 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2.
 
+# Major Dependencies:
+
+Angular: 8.0.0
+Angular Material: 8.0.1
+Bootstrap: 4
+
+# Activated Routes:
+	- /dashboard
+	- /directive-demo
+
+# Implementation Steps:
+
+1. Create multiple modules and components for lazy loading feature. App runs faster
+
+2. Added nav bar using angular animation
+
+6. Add a Table which is loading JSON (loaded some part of it).
+
+8. Filter results 
+
+9. Added structural directive ngIf alongwith ng-template for DOM manipulation
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
