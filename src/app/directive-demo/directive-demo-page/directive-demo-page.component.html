@@ -1,6 +1,13 @@
-<div *ngIf="false else customBlock">
-  Lorem Ipsum.
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 centerColumn text-center">
+      <div *ngIf="isShowDefaultValue else customBlock">
+        <h3>Default value.</h3>
+      </div>
+      <ng-template #customBlock>
+        <h3>{{customValue}}</h3>
+      </ng-template>
+      <button mat-raised-button color="primary" (click)="toggle($event)">Change</button>
+    </div>
+  </div>
 </div>
-<ng-template #customBlock>
-  {{customValue}}
-</ng-template>

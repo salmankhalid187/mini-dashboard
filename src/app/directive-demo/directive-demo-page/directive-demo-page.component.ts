@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectiveDemoPageComponent implements OnInit {
 
-  customValue = 'Some custom text value';
+  customValue = 'This static text has been shown to show the usage of structural directive.';
+
+  isShowDefaultValue = false;
 
   ngOnInit() {
+  }
+
+  public toggle(event) {
+    this.isShowDefaultValue = !this.isShowDefaultValue;
   }
 
 }
