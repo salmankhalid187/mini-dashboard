@@ -6,9 +6,3 @@ export interface PayloadItem {
     self: string;
   };
 }
-
-export interface PayloadDto {
-  data: {
-    items: PayloadItem[];
-  };
-}

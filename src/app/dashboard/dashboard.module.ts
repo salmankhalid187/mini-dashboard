@@ -6,6 +6,7 @@ import { DashboardBarComponent } from './dashboard-bar/dashboard-bar.component';
 import { MatTableModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { PayloadService } from '../services/payload.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
