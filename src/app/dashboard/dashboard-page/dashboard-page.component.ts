@@ -1,9 +1,8 @@
 import { Component, ViewChild, AfterViewInit } from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
-import {MatSort} from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
 import { PayloadService } from 'src/app/services/payload.service';
 import { PayloadItem } from 'src/app/models/payload-item';
-
 
 @Component({
   selector: 'app-dashboard-page',
@@ -14,6 +13,7 @@ export class DashboardPageComponent implements  AfterViewInit {
 
   displayedColumns = ['id', 'type', 'links'];
   dataSource: MatTableDataSource<PayloadItem>;
+
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   constructor(private payloadService: PayloadService) {}

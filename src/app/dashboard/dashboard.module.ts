@@ -3,11 +3,9 @@ import { CommonModule } from '@angular/common';
 import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
 import { RouterModule } from '@angular/router';
 import { DashboardBarComponent } from './dashboard-bar/dashboard-bar.component';
-import { MatTableModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatTableModule, MatFormFieldModule, MatInputModule, MatSortModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { PayloadService } from '../services/payload.service';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 
 @NgModule({
   declarations: [DashboardPageComponent, DashboardBarComponent],
@@ -16,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatTableModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSortModule,
     HttpClientModule,
     RouterModule.forChild([
       { path: '', component: DashboardPageComponent }

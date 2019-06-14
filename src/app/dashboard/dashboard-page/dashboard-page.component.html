@@ -4,7 +4,7 @@
     <mat-form-field>
       <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
     </mat-form-field>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 example-table" matSort matSortActive="id" matSortDisableClear matSortDirection="desc">      
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort matSortActive="id" matSortDisableClear matSortDirection="asc">      
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear>
           id
@@ -18,7 +18,7 @@
       </ng-container>
 
       <ng-container matColumnDef="links">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Links</th>
+        <th mat-header-cell *matHeaderCellDef>Links</th>
         <td mat-cell *matCellDef="let row">{{row.links.self}}</td>
       </ng-container>
 

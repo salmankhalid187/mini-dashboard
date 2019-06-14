@@ -1,16 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {MatButtonModule} from '@angular/material/button';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-landing',
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss']
 })
-export class LandingPageComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class LandingPageComponent {
 }
