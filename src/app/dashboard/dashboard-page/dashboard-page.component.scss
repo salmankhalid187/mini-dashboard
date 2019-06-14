@@ -13,9 +13,18 @@
   		width: 25%;
 		}
 	}
+	img {
+		max-width: 4em;
+		max-height: 6em;
+  		display: block;
+  		width: auto;
+  		height: auto;
+		margin:0.5em;
+		}	
 	mat-form-field {
 		width: 100%;
 	}
+
 }
 
 

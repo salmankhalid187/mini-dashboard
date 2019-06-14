@@ -11,7 +11,8 @@ import { PayloadItem } from 'src/app/models/payload-item';
 })
 export class DashboardPageComponent implements  AfterViewInit {
 
-  displayedColumns = ['id', 'type', 'links'];
+  displayedColumns = ['id', 'name', 'image', 'links'];
+
   dataSource: MatTableDataSource<PayloadItem>;
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
@@ -22,13 +23,15 @@ export class DashboardPageComponent implements  AfterViewInit {
 
     this.payloadService.getData()
       .subscribe(payloadItems => {
-        console.log(JSON.stringify(payloadItems));
         this.dataSource = new MatTableDataSource(payloadItems);
         this.dataSource.sort = this.sort;
+        this.dataSource.filterPredicate = (data: PayloadItem, filter: string) => {
+          return data.attributes.content.toLowerCase().includes(filter) || data.id.toLowerCase().includes(filter);
+        };
       });
   }
 
   applyFilter(filterValue: string) {
-      this.dataSource.filter = filterValue.trim().toLowerCase();
+      this.dataSource.filter = filterValue;
   }
 }
