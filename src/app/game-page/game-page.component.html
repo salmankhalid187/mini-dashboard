@@ -1,0 +1,12 @@
+<div class="center-adj" [ngStyle]="getImageSize()">
+  <mat-grid-list [cols]="cols" [rowHeight]="getWidthHeightRatio()" gutterSize="1px">
+    <mat-grid-tile *ngFor="let tile of selectedTiles">
+      <img class="custom-image" [ngStyle]="getPuzzleTileStyle(tile)" (click)="tileClicked(tile)" />
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<div class="scrolling-wrapper-flexbox">
+  <div class="card" *ngFor="let tile of puzzleTiles" [ngStyle]="getTileSize()">
+    <img class="custom-image" [ngStyle]="getBottomTilesStyle(tile.puzzleLocation)" (click)="tileClicked(tile)" />
+  </div>
+</div>
