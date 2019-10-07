@@ -2,9 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { PayloadItem } from '../models/payload-item';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class PayloadService {
 
   private serviceUrl = 'https://raw.githubusercontent.com/PerxTech/angular-interview/master/example.json';
@@ -13,10 +15,8 @@ export class PayloadService {
 
   getData(): Observable<PayloadItem[]> {
     return this.http.get<any>(this.serviceUrl).pipe(
-    map(model => {
-      console.log(JSON.stringify(model));
-      return model.data;
-    })
-  );
+      tap(res => console.log(res)),
+      map(model => model.data)
+    );
   }
 }
