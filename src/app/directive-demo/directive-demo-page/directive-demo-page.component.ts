@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { PageAppearence, PageProperties } from '../../page-properties';
 
 @Component({
   selector: 'app-directive-demo-page',
   templateUrl: './directive-demo-page.component.html',
   styleUrls: ['./directive-demo-page.component.scss']
 })
-export class DirectiveDemoPageComponent {
+export class DirectiveDemoPageComponent implements PageAppearence {
 
   customValue = 'This static text has been shown to show the usage of structural directive.';
   isShowDefaultValue = false;
@@ -14,4 +15,10 @@ export class DirectiveDemoPageComponent {
     this.isShowDefaultValue = !this.isShowDefaultValue;
   }
 
+  public getPageProperties(): PageProperties {
+    return {
+      isHeaderVisible: true,
+      pageTitle: 'Directives demo'
+    }
+  }
 }

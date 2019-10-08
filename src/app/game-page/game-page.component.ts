@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
+import { PageAppearence, PageProperties } from '../page-properties';
+
 interface IPuzzleTile {
 
   selectedTileIndex: number;
@@ -12,7 +14,7 @@ interface IPuzzleTile {
   templateUrl: './game-page.component.html',
   styleUrls: ['./game-page.component.scss']
 })
-export class GamePageComponent implements OnInit {
+export class GamePageComponent implements OnInit, PageAppearence {
 
   imageWidth = 400;
   imageHeight = 300;
@@ -47,6 +49,13 @@ export class GamePageComponent implements OnInit {
         this.puzzleTiles[i] = puzzleTile;
     }
 
+  }
+
+  public getPageProperties(): PageProperties {
+    return {
+      isHeaderVisible: true,
+      pageTitle: 'Puzzle game'
+    }
   }
 
   shuffle(a) {

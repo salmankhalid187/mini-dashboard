@@ -1,11 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-
-interface IPuzzleTile {
-
-  selectedTileIndex: number;
-  puzzleLocation: number;
-  isSelected: boolean;
-}
+import { PageAppearence, PageProperties } from '../../page-properties';
 
 interface DemoItem {
   title: string;
@@ -17,7 +11,7 @@ interface DemoItem {
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss']
 })
-export class LandingPageComponent implements OnInit {
+export class LandingPageComponent implements PageAppearence {
 
   public demosList: DemoItem[] = [
     { title: 'Game page', link: './game-page'},
@@ -25,7 +19,10 @@ export class LandingPageComponent implements OnInit {
     { title: 'Dashboard', link: './dashboard'}
   ]
 
-  ngOnInit() {
-
+  public getPageProperties(): PageProperties {
+    return {
+      isHeaderVisible: true,
+      pageTitle: 'Demos list'
+    }
   }
 }

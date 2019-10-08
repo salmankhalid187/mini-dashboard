@@ -1,1 +1,8 @@
-<router-outlet></router-outlet>
+<div class="main-container">
+    <mat-toolbar *ngIf="pageProperties && pageProperties.isHeaderVisible" class="toolbar">
+        <div class="center-title">{{pageProperties.pageTitle}}</div>
+    </mat-toolbar>
+    <div class="demo-background">
+        <router-outlet (activate)="onActivate($event)"></router-outlet>
+    </div>
+</div>
