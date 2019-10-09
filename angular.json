@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mini-dashboard": {
+    "angular-playground": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mini-dashboard",
+            "outputPath": "dist/angular-playground",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -64,18 +64,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "mini-dashboard:build"
+            "browserTarget": "angular-playground:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "mini-dashboard:build:production"
+              "browserTarget": "angular-playground:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mini-dashboard:build"
+            "browserTarget": "angular-playground:build"
           }
         },
         "test": {
@@ -114,16 +114,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "mini-dashboard:serve"
+            "devServerTarget": "angular-playground:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "mini-dashboard:serve:production"
+              "devServerTarget": "angular-playground:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "mini-dashboard"
+  "defaultProject": "angular-playground"
 }
