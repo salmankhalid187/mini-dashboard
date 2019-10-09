@@ -7,10 +7,9 @@ import { PageAppearence, PageProperties } from './page-properties';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'mini-dashboard';
-  public pageProperties: PageProperties = null;
 
-  private 
+  title = 'angular-playground';
+  public pageProperties: PageProperties = null;
 
   public onActivate(ref: any): void {
     const page = ref as PageAppearence;
