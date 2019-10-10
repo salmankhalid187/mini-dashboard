@@ -1,3 +1,11 @@
-<p>
-  observables-demo works!
-</p>
+<div class="main-container">
+  <button mat-raised-button color="primary" (click)="onIncrementClick()">
+		Increment
+  </button>
+  <button mat-raised-button color="primary" (click)="onDecrementClick()">
+		Decrement
+  </button>
+  <div class="final-text">
+    {{currentValue}}
+  </div>
+</div>
