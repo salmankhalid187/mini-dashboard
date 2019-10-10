@@ -3,13 +3,14 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { PayloadService } from 'src/app/services/payload.service';
 import { PayloadItem } from 'src/app/models/payload-item';
+import { PageAppearence, PageProperties } from '../../page-properties';
 
 @Component({
   selector: 'app-dashboard-page',
   templateUrl: './dashboard-page.component.html',
   styleUrls: ['./dashboard-page.component.scss']
 })
-export class DashboardPageComponent implements  AfterViewInit {
+export class DashboardPageComponent implements  AfterViewInit, PageAppearence {
 
   displayedColumns = ['id', 'name', 'image', 'links'];
 
@@ -33,5 +34,12 @@ export class DashboardPageComponent implements  AfterViewInit {
 
   applyFilter(filterValue: string) {
       this.dataSource.filter = filterValue;
+  }
+
+  public getPageProperties(): PageProperties {
+    return {
+      isHeaderVisible: false,
+      pageTitle: ''
+    }
   }
 }
