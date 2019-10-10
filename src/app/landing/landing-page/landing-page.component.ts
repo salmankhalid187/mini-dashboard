@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PageAppearence, PageProperties } from '../../page-properties';
-import { link } from 'fs';
 
 interface DemoItem {
   title: string;
