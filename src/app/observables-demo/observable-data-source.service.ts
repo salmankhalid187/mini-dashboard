@@ -9,6 +9,7 @@ export class ObservableDataSourceService {
 
   private counter: number = 0;
   private subject: Subject<number> = new Subject<number>();
+  private timerId: any = null;
 
   public incrementNumber(): void {
     this.counter ++;
@@ -18,6 +19,20 @@ export class ObservableDataSourceService {
   public decrementNumber(): void {
     this.counter > 0 ? this.counter -- : this.subject.error(new Error('Number is already zero'));
     this.subject.next(this.counter);
+  }
+
+  public startAutoIncrement(): void {
+    
+    if(!this.timerId) {
+      this.timerId = setInterval(() => {
+      this.subject.next(++this.counter);
+      }, 1000);
+    }
+  }
+
+  public stopAutoIncrement(): void {
+    clearInterval(this.timerId);
+    this.timerId = null;
   }
   
   public getObservableNumnber(): Observable<number> {

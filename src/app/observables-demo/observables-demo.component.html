@@ -5,7 +5,14 @@
   <button mat-raised-button color="primary" (click)="onDecrementClick()">
 		Decrement
   </button>
+  <button mat-raised-button color="primary" (click)="onAutoIncrement()">
+		Auto Increment
+  </button>
+  <button mat-raised-button color="primary" (click)="onStopAutoIncrement()">
+		Stop Increment
+  </button>
+
   <div class="final-text">
-    {{currentValue}}
+    {{valueObserver | async}}
   </div>
 </div>
