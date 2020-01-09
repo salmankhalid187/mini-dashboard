@@ -19,6 +19,6 @@ export class DirectiveDemoPageComponent implements PageAppearence {
     return {
       isHeaderVisible: true,
       pageTitle: 'Directives demo'
-    }
+    };
   }
 }

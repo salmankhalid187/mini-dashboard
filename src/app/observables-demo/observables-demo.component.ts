@@ -12,7 +12,7 @@ import { takeWhile } from 'rxjs/operators';
 export class ObservablesDemoComponent implements OnInit, OnDestroy, PageAppearence {
 
   private valueObserver: Observable<number>;
-  private alive: boolean = true;
+  private alive = true;
 
   constructor(private observableDataService: ObservableDataSourceService) { }
 
@@ -28,28 +28,27 @@ export class ObservablesDemoComponent implements OnInit, OnDestroy, PageAppearen
     this.observableDataService.stopAutoIncrement();
   }
 
-  public onIncrementClick():void {
+  public onIncrementClick(): void {
     this.observableDataService.incrementNumber();
   }
 
-  public onDecrementClick():void {
+  public onDecrementClick(): void {
     this.observableDataService.decrementNumber();
   }
 
-  public onAutoIncrement():void {
+  public onAutoIncrement(): void {
     this.observableDataService.startAutoIncrement();
   }
 
   public onStopAutoIncrement(): void {
     this.observableDataService.stopAutoIncrement();
   }
-  
 
   public getPageProperties(): PageProperties {
     return {
       isHeaderVisible: true,
       pageTitle: 'Demos list'
-    }
+    };
   }
 
 }

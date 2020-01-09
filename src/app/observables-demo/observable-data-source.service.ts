@@ -7,7 +7,7 @@ import { Observable, Subject } from 'rxjs';
 
 export class ObservableDataSourceService {
 
-  private counter: number = 0;
+  private counter = 0;
   private subject: Subject<number> = new Subject<number>();
   private timerId: any = null;
 
@@ -22,8 +22,8 @@ export class ObservableDataSourceService {
   }
 
   public startAutoIncrement(): void {
-    
-    if(!this.timerId) {
+
+    if (!this.timerId) {
       this.timerId = setInterval(() => {
       this.subject.next(++this.counter);
       }, 1000);
@@ -34,7 +34,7 @@ export class ObservableDataSourceService {
     clearInterval(this.timerId);
     this.timerId = null;
   }
-  
+
   public getObservableNumnber(): Observable<number> {
     return this.subject.asObservable();
   }

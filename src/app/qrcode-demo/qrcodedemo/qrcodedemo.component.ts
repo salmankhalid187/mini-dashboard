@@ -17,7 +17,7 @@ export class QrcodedemoComponent implements OnInit, PageAppearence {
     return {
       isHeaderVisible: true,
       pageTitle: 'Qr code demo'
-    }
+    };
   }
 
 }

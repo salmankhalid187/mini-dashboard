@@ -18,12 +18,12 @@ export class LandingPageComponent implements PageAppearence {
     { title: 'Qrcode page', link: './qrcode-demo'},
     { title: 'Dashboard', link: './dashboard'},
     { title: 'Observables working', link: './observables-demo'}
-  ]
+  ];
 
   public getPageProperties(): PageProperties {
     return {
       isHeaderVisible: true,
       pageTitle: 'Demos list'
-    }
+    };
   }
 }

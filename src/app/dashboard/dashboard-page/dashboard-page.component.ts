@@ -40,6 +40,6 @@ export class DashboardPageComponent implements  AfterViewInit, PageAppearence {
     return {
       isHeaderVisible: false,
       pageTitle: ''
-    }
+    };
   }
 }

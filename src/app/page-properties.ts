@@ -5,4 +5,4 @@ export interface PageAppearence {
 export interface PageProperties {
     isHeaderVisible: boolean;
     pageTitle: string;
-  }
+}

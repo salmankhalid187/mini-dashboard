@@ -55,7 +55,7 @@ export class GamePageComponent implements OnInit, PageAppearence {
     return {
       isHeaderVisible: true,
       pageTitle: 'Puzzle game'
-    }
+    };
   }
 
   shuffle(a) {
